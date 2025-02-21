@@ -2,9 +2,8 @@
 
 int main(void)
 {
-    char hello [12] = "Hello World";
+    char hello [] = "Hello World";
     char tartget [] = "Hello World";
-
     for(int i = 0; i<12; i++) 
     {
         if(hello[i] == tartget[i])
@@ -15,6 +14,7 @@ int main(void)
         {
             printf("안녕하지 못해");
         }
+        break;
     }
 
     return 0;

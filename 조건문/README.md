@@ -46,6 +46,7 @@ int main(void)
         {
             printf("안녕하지 못해");
         }
+        break;
     }
 
     return 0;
