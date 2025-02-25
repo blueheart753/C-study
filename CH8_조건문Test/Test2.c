@@ -10,13 +10,14 @@
 
 int main(void)
 {
-    int score;
+    int score = 0;
     char credit;
     printf("학점을 입력해주세요 : ");
     scanf("%d",&score);
 
     switch (score / 10)
     {
+    case 10:
     case 9:
         credit = 'A';
         break;
