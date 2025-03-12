@@ -3,34 +3,47 @@
 int main(void)
 {
     char ch[10] = {0,};
-    char alphabet[29] = {0,};
-    int num [29] = {0,};
+    char alphabet[27] = {0,};
+    int num [27] = {0,};
     char *alp = NULL;
     char *pch = NULL;
     int *pnum = NULL;
     int biggestNum = 0;
     scanf("%s",ch);
-    pch = ch;
     alp = alphabet;
-    for(int i = 97; i < 97+28; i++,alp++)
+    for(int i = 97; i < 97+26; i++,alp++)
     {
-        *alp += i;
+        *alp = i;
     }
     
-    for(alp = alphabet; alp < alp+28; alp++)
+    pch = ch;
+    while(*pch !='\0')
     {
-       for(pnum = num; pnum < pnum+28; pnum++)
-       {    
-        if(*pch == *(pnum)+97)
+        pnum = num;
+        for(alp = alphabet; alp < alphabet + 26; alp++,pnum++)
         {
-            *pnum += 1;
+            if(*pch == *alp)
+            {
+                (*pnum)++;
+            }
         }
-       }
+        pch++;
     }
 
-    for(pnum = num; pnum < pnum+28; pnum++) {
-        if(*pnum > *pnum+1){
+    for(pnum = num; pnum < num+26; pnum++) {
+        if (*pnum >= biggestNum)
+        {
             biggestNum = *pnum;
+        }
+    }
+
+    pnum = num;
+    for (alp = alphabet; alp < alphabet + 26; alp++, pnum++)
+    {
+        if(biggestNum == *pnum)
+        {
+            printf("%c ",*alp);
+            break;
         }
     }
 
